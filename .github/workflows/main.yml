@@ -22,9 +22,6 @@ jobs:
       - run: cd .pulumi && pulumi stack select dev
         env:
           PULUMI_ACCESS_TOKEN: pul-a778c4f179b93f1c45f3cbd4ca8353649f8fc126
-      - run: pulumi config refresh
-        env:
-          PULUMI_ACCESS_TOKEN: pul-a778c4f179b93f1c45f3cbd4ca8353649f8fc126
       - run: cd .pulumi && pulumi up --yes
         env:
           PULUMI_ACCESS_TOKEN: pul-a778c4f179b93f1c45f3cbd4ca8353649f8fc126
