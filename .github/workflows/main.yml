@@ -27,3 +27,12 @@ jobs:
           PULUMI_ACCESS_TOKEN: pul-a778c4f179b93f1c45f3cbd4ca8353649f8fc126
           AWS_ACCESS_KEY_ID: AKIA3NDVZJAAQACNVOEI
           AWS_SECRET_ACCESS_KEY: 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
+      - uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --acl public-read --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: my-bucket-ffd873c
+          AWS_ACCESS_KEY_ID: AKIA3NDVZJAAQACNVOEI
+          AWS_SECRET_ACCESS_KEY: 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
+          AWS_REGION: 'us-east-1'   # optional: defaults to us-east-1
+          SOURCE_DIR: 'dist'      # optional: defaults to entire repository
